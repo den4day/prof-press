@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О компании — ООО «Рыжий Кот»</title>
+  <meta name="description" content="ООО «Рыжий Кот» — лидер в России по производству и дистрибуции детской продукции.">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================== HEADER ============================== -->
+  <header class="header">
+
+    <!-- Верхняя серая полоса (только desktop) -->
+    <div class="header__topbar">
+      <div class="container header__topbar-inner">
+        <a class="header__phone" href="tel:+78632040125">+7 (863) 204-01-25</a>
+        <nav class="header__toplinks" aria-label="Дополнительная навигация">
+          <a href="#">Новости</a>
+          <a href="#" class="is-active">О компании</a>
+          <a href="#">Сотрудничество</a>
+          <a href="#">Вопрос-ответ</a>
+          <a href="#">Документы</a>
+          <a href="#">Контакты</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Основная часть шапки: логотип, каталог, поиск, вход -->
+    <div class="container header__main">
+      <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu" data-menu-open>
+        <span></span><span></span><span></span>
+      </button>
+
+      <a class="header__logo" href="#" aria-label="Рыжий Кот — на главную">
+        <img src="images/logo.svg" alt="Логотип Рыжий Кот" width="80" height="80">
+      </a>
+
+      <button class="btn header__catalog" type="button">
+        <span class="header__catalog-icon" aria-hidden="true"><i></i><i></i></span>
+        Каталог
+      </button>
+
+      <form class="search" role="search" action="#" onsubmit="return false;">
+        <button class="search__scope" type="button" aria-label="Область поиска: везде">
+          Везде
+          <svg width="13" height="8" viewBox="0 0 13 8" aria-hidden="true"><path d="M6.5 5.06 11.56 0 13 1.44 6.5 7.94 0 1.44 1.44 0Z" fill="#fff"/></svg>
+        </button>
+        <input class="search__input" type="search" name="q" placeholder="Поиск по названию или коду товара" aria-label="Поиск по названию или коду товара">
+        <button class="search__submit" type="submit" aria-label="Найти">
+          <img src="images/icon-search.svg" alt="" width="16" height="16">
+        </button>
+      </form>
+
+      <div class="header__user">
+        <a class="header__user-link header__user-link--register" href="#">
+          <img src="images/icon-register.svg" alt="" width="24" height="26">
+          <span>Регистрация</span>
+        </a>
+        <a class="header__user-link" href="#">
+          <img src="images/icon-login.svg" alt="" width="24" height="26">
+          <span>Вход</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Навигация по категориям (только desktop) -->
+    <nav class="container header__nav" aria-label="Категории товаров">
+      <a href="#">Новинки</a>
+      <a href="#">Лето</a>
+      <a href="#">Деревянные игрушки</a>
+      <a href="#">Спорт и туризм</a>
+      <a href="#">Пазлы</a>
+      <a href="#">Конструкторы</a>
+      <a href="#">Творчество</a>
+      <a href="#">Настольные игры</a>
+      <a href="#">Игрушки</a>
+      <a href="#">Транспорт</a>
+      <a href="#">Игротека</a>
+      <a href="#">Мягкая игрушка</a>
+      <a href="#" class="is-sale">Распродажа</a>
+    </nav>
+  </header>
+
+  <!-- Мобильное меню (выезжает по кнопке-бургеру) -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu__overlay" data-menu-close></div>
+    <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Меню">
+      <div class="mobile-menu__head">
+        <span class="mobile-menu__title">Меню</span>
+        <button class="close-btn" type="button" aria-label="Закрыть меню" data-menu-close></button>
+      </div>
+      <nav class="mobile-menu__nav" aria-label="Категории товаров">
+        <a href="#">Новинки</a>
+        <a href="#">Лето</a>
+        <a href="#">Деревянные игрушки</a>
+        <a href="#">Спорт и туризм</a>
+        <a href="#">Пазлы</a>
+        <a href="#">Конструкторы</a>
+        <a href="#">Творчество</a>
+        <a href="#">Настольные игры</a>
+        <a href="#">Игрушки</a>
+        <a href="#">Транспорт</a>
+        <a href="#">Игротека</a>
+        <a href="#">Мягкая игрушка</a>
+        <a href="#" class="is-sale">Распродажа</a>
+      </nav>
+      <nav class="mobile-menu__links" aria-label="Дополнительная навигация">
+        <a href="#">Новости</a>
+        <a href="#" class="is-active">О компании</a>
+        <a href="#">Сотрудничество</a>
+        <a href="#">Вопрос-ответ</a>
+        <a href="#">Документы</a>
+        <a href="#">Контакты</a>
+        <a href="#">Регистрация</a>
+      </nav>
+      <a class="mobile-menu__phone" href="tel:+78632040125">+7 (863) 204-01-25</a>
+    </div>
+  </div>
+
+  <!-- ============================== MAIN ============================== -->
+  <main class="page">
+    <div class="container">
+
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="#">Главная</a>
+        <span class="breadcrumbs__sep" aria-hidden="true"></span>
+        <span aria-current="page">О компании</span>
+      </nav>
+
+      <h1 class="page__title">О компании</h1>
+
+      <!-- Блок 1: описание компании -->
+      <section class="about">
+        <img class="about__paw" src="images/paw.svg" alt="" aria-hidden="true">
+
+        <div class="about__row">
+          <h2 class="about__heading about__heading--lead">ООО «Рыжий Кот» – лидер в&nbsp;России по&nbsp;производству и&nbsp;дистрибуции детской продукции</h2>
+          <div class="about__text">
+            <p>Игры и игрушки занимают огромное место в жизни каждого ребенка. Они помогают узнавать мир, учат общению, развивают речь. Именно поэтому выбор игрушек требует к себе самого серьезного внимания!</p>
+            <p>Начиная с 2012 года «Рыжий Кот» стоит на страже счастливого детства. У нас Вы найдете все необходимое для полноценного и своевременного развития, а также интересного и веселого досуга Вашего ребенка. Мы предлагаем широкий ассортимент детской продукции, включающий более 8&nbsp;000 наименований и занимающий свыше 20&nbsp;000 кв.м. складских помещений!</p>
+          </div>
+        </div>
+
+        <!-- Компания в цифрах -->
+        <div class="about__row">
+          <h2 class="about__heading">Компания в цифрах</h2>
+          <ul class="stats">
+            <li class="stats__item">
+              <span class="stats__value">12 лет на рынке</span>
+              <span class="stats__label">игрушек и товаров для детей</span>
+            </li>
+            <li class="stats__item">
+              <span class="stats__value">Более 50&nbsp;000 кв.м</span>
+              <span class="stats__label">складских помещений</span>
+            </li>
+            <li class="stats__item">
+              <span class="stats__value">&gt; 1500 человек</span>
+              <span class="stats__label">сотрудников компании</span>
+            </li>
+            <li class="stats__item">
+              <span class="stats__value">8000 +</span>
+              <span class="stats__label">наименований товаров</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Фото склада -->
+      <figure class="photo">
+        <img src="images/warehouse.jpg" alt="Складской комплекс компании «Рыжий Кот» с высоты птичьего полёта" width="1480" height="833" loading="lazy">
+      </figure>
+
+      <!-- Блок 2: миссия -->
+      <section class="about">
+        <div class="about__row">
+          <h2 class="about__heading">Делать детей счастливыми – наша главная задача</h2>
+          <div class="about__text">
+            <p>Команда «Рыжий Кот» – настоящие фанаты своего дела. Мы гордимся тем, что в&nbsp;эпоху массовой автоматизации и механизации, нам удалось сохранить&nbsp;индивидуальный подход к отбору и разработке каждой игрушки, тщательно продумывая концепцию и дизайн, соблюдая безопасность и выполняя требования мировых стандартов качества.&nbsp;А главное, делают все&nbsp;с любовью и заботой к детям! Благодаря такому подходу&nbsp;«Рыжий Кот» стал лидером в России по производству и дистрибуции детской продукции.</p>
+          </div>
+        </div>
+
+        <!-- Блок 3: собственное производство -->
+        <div class="about__row">
+          <h2 class="about__heading">Собственное производство – наше преимущество</h2>
+          <div class="about__text">
+            <p>В отличии от большинства российских компаний, "Рыжий Кот" обладает собственными производствами:</p>
+            <ul class="list list--blue">
+              <li><a href="#">Настольных печатных игр</a></li>
+              <li><a href="#">Пазлов</a></li>
+              <li><a href="#">Пластиковых игрушек</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Торговые марки -->
+        <div class="about__row about__row--brands">
+          <div class="about__text">
+            <p>Это позволяет нам выпускать игрушки собственных торговых марок:</p>
+            <ul class="list list--orange list--brands">
+              <li><a href="#">«Рыжий Кот»&nbsp;<sup>®</sup></a> -&nbsp;пазлы, настольные игры и игрушки всех направлений</li>
+              <li><a href="#">«Звезда вечеринки»&nbsp;<sup>®</sup></a> -&nbsp;наборы стильной и безопасной детской декоративной косметики</li>
+              <li><a href="#">«Bright Kids»&nbsp;<sup>®</sup></a> -&nbsp;развивающие настольные игры для детей</li>
+            </ul>
+          </div>
+          <div class="about__text">
+            <ul class="list list--orange list--brands">
+              <li><a href="#">«GRIMMA»&nbsp;<sup>®</sup></a> -&nbsp;наборы безопасного аквагримма для детей</li>
+              <li><a href="#">«VELOBIBI»&nbsp;<sup>®</sup></a> -&nbsp;детская серия 3-колесных самокатов и велосипедов</li>
+              <li><a href="#">«U-TURN»&nbsp;<sup>®</sup></a> -&nbsp;серия 2-колесных самокатов и спортивных товаров</li>
+              <li><a href="#">«SKALA»&nbsp;<sup>®</sup></a> -&nbsp;товары для отдыха и туризма</li>
+              <li><a href="#">«Пиратский остров»&nbsp;<sup>®</sup></a> -&nbsp;игровые наборы для мальчиков</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Кнопка открытия popup -->
+      <div class="cta">
+        <button class="btn cta__btn" type="button" data-popup-open>Форма обратной связи</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="footer">
+    <img class="footer__paw" src="images/paw.svg" alt="" aria-hidden="true">
+    <div class="container footer__inner">
+
+      <nav class="footer__col footer__col--1" aria-label="Каталог">
+        <a href="#">Новинки 77</a>
+        <a href="#">Каталог</a>
+        <a href="#">Хиты</a>
+      </nav>
+      <nav class="footer__col footer__col--2" aria-label="Информация">
+        <a href="#">Акции</a>
+        <a href="#">Новости</a>
+        <a href="#">Вопрос-ответ</a>
+      </nav>
+      <nav class="footer__col footer__col--3" aria-label="Компания">
+        <a href="#">Сотрудничество</a>
+        <a href="#">Контакты</a>
+        <a href="#">Документы</a>
+      </nav>
+
+      <div class="footer__legal">
+        <a class="footer__agreement" href="#">Соглашение на обработку персональных данных</a>
+        <span class="footer__copy">2025 ООО “Рыжий кот”</span>
+      </div>
+
+      <div class="footer__phone">
+        <span>Звоните:</span>
+        <a href="tel:+78632040125">8 (863) 204-01-25</a>
+      </div>
+
+      <address class="footer__address">
+        <span>Россия</span>
+        <span>Ростовская область</span>
+        <span>г. Аксай, ул. Шолохова 1Б</span>
+      </address>
+
+    </div>
+  </footer>
+
+  <!-- ============================== POPUP ============================== -->
+  <div class="popup" id="feedback-popup" aria-hidden="true">
+    <div class="popup__overlay" data-popup-close></div>
+
+    <div class="popup__window" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+      <button class="close-btn popup__close" type="button" aria-label="Закрыть форму" data-popup-close></button>
+
+      <form class="form" id="feedback-form" action="index.php" method="post" novalidate>
+        <h2 class="form__title" id="popup-title">Форма обратной связи</h2>
+
+        <div class="form__field">
+          <label class="visually-hidden" for="field-name">Ваше имя</label>
+          <input class="form__input" id="field-name" type="text" name="name" placeholder="Ваше имя" autocomplete="name" maxlength="100" required minlength="2">
+          <span class="form__error" data-error-for="name" aria-live="polite"></span>
+        </div>
+
+        <div class="form__field">
+          <label class="visually-hidden" for="field-email">Ваш e-mail</label>
+          <input class="form__input" id="field-email" type="email" name="email" placeholder="Ваш e-mail" autocomplete="email" maxlength="254" required>
+          <span class="form__error" data-error-for="email" aria-live="polite"></span>
+        </div>
+
+        <button class="btn form__submit" type="submit">Отправить</button>
+
+        <p class="form__consent">Нажимая на кнопку Отправить вы даете согласие на&nbsp;<a href="#">обработку персональных данных</a></p>
+
+        <!-- Сюда JS выводит общий результат: ошибку сети/сервера или текст успеха -->
+        <p class="form__status" role="status" aria-live="polite"></p>
+      </form>
+
+      <!-- Показывается вместо формы после успешной отправки -->
+      <div class="form__success" hidden>
+        <!-- Сюда JS подставляет текст ответа сервера («Спасибо, заявка принята») -->
+        <h2 class="form__title form__success-text"></h2>
+        <p class="form__success-note">Мы свяжемся с вами в ближайшее время.</p>
+        <button class="btn" type="button" data-popup-close>Закрыть</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
