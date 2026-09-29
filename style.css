@@ -847,6 +847,22 @@ address {
   color: var(--color-blue);
 }
 
+.form__note {
+  margin-top: 20px;
+  padding: 10px 14px;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--color-muted);
+  background: var(--bg-white);
+  border-left: 3px solid var(--color-orange);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.form__note code {
+  font-family: Menlo, Consolas, monospace;
+  font-size: 12px;
+}
+
 .form__status {
   margin-top: 16px;
   font-size: 14px;

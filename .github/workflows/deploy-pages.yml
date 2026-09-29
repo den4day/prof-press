@@ -1,0 +1,43 @@
+# Публикация статической демо-версии на GitHub Pages при каждом push в main.
+# На Pages выполняется только HTML/CSS/JS; index.php там не работает,
+# поэтому форма на демо-сайте показывает пометку об этом (см. main.js).
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Не запускаем два деплоя одновременно
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # Загружаем весь репозиторий как артефакт сайта:
+      # index.html в корне — это и есть главная страница
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -76,6 +76,13 @@
   // Элемент, с которого открыли popup — вернём на него фокус после закрытия
   var lastFocused = null;
 
+  // GitHub Pages отдаёт только статику: index.php там не выполняется.
+  // Показываем в форме пометку, чтобы это не выглядело как ошибка.
+  var isStaticDemo = /\.github\.io$/.test(location.hostname);
+  if (isStaticDemo) {
+    form.querySelector('.form__note').hidden = false;
+  }
+
   function openPopup() {
     if (popup.classList.contains('is-open')) return;
     lastFocused = document.activeElement;
@@ -256,8 +263,10 @@
       })
       .catch(function () {
         // Сюда попадаем при обрыве сети или если ответ — не JSON
-        // (например, сервер вернул HTML с ошибкой PHP)
-        statusEl.textContent = 'Ошибка соединения с сервером. Проверьте, что страница открыта через PHP-сервер, и попробуйте снова.';
+        // (например, 404 на GitHub Pages или HTML с ошибкой PHP)
+        statusEl.textContent = isStaticDemo
+          ? 'На демо-версии сервер недоступен: данные прошли проверку на JavaScript, но index.php здесь не выполняется.'
+          : 'Ошибка соединения с сервером. Проверьте, что страница открыта через PHP-сервер, и попробуйте снова.';
       })
       .finally(function () {
         setLoading(false);
