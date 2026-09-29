@@ -654,12 +654,13 @@ address {
   line-height: 22px;
 }
 
+/* Позиция и размер лапы взяты из макета для каждой ширины */
 .footer__paw {
   position: absolute;
-  top: -174px;
+  top: -126px;
   left: 50%;
-  width: 690px;
-  margin-left: -415px;
+  width: 546px;
+  margin-left: -339px;
   opacity: 0.08;
   pointer-events: none;
 }
@@ -1054,8 +1055,8 @@ address {
   }
 
   .footer__paw {
-    top: -172px;
-    margin-left: -375px;
+    top: -124px;
+    margin-left: -301px;
   }
 
   .footer__inner {
@@ -1104,10 +1105,10 @@ address {
   }
 
   .footer__paw {
-    top: -160px;
-    left: 0;
-    width: 620px;
-    margin-left: -5px;
+    top: -53px;
+    left: 48px;
+    width: 527px;
+    margin-left: 0;
   }
 
   .footer__legal {
@@ -1229,10 +1230,9 @@ address {
   .footer__address { grid-area: address; }
 
   .footer__paw {
-    top: -115px;
-    left: -130px;
-    width: 730px;
-    margin-left: 0;
+    top: -65px;
+    left: -51px;
+    width: 577px;
   }
 
   .popup {
